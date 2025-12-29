@@ -20,7 +20,7 @@ html, body{
 
 /* ================= LOADER ================= */
 #loader{
-  /* display: none; */
+  display: none;
   position: fixed;
   width: 100%;
   height: 100vh;
@@ -557,6 +557,29 @@ html, body{
 }
 
 
+
+/* ===== UPSIDE-DOWN CURVE ONLY ===== */
+#contact::before {
+  content: "";
+  position: absolute;
+  top: -4vw;               /* exactly matches margin */
+  left: 0;
+  width: 100%;
+  height: 4vw;
+  
+  background-image: url("image/curveimg.svg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center;
+  /* background-color: black; */
+  transform: rotate(-180deg);
+  transform-origin: center;
+  /* background-color: black; */
+  z-index: 3;
+  pointer-events: none;
+}
+
+
 /* ================= CONTACT ================= */
 
 #contact {
@@ -576,26 +599,6 @@ html, body{
   /* background-color: black; */
 }
 
-/* ===== UPSIDE-DOWN CURVE ONLY ===== */
-#contact::before {
-  content: "";
-  position: absolute;
-  top: -4vw;               /* exactly matches margin */
-  left: 0;
-  width: 100%;
-  height: 4vw;
-
-  background-image: url("image/curveimg.svg");
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  background-position: center;
-  /* background-color: black; */
-  transform: rotate(-180deg);
-  transform-origin: center;
-
-  z-index: 3;
-  pointer-events: none;
-}
 
 
 /* ===== CONTENT ===== */
@@ -748,16 +751,21 @@ html, body{
     /* ================= LOADER ================= */
   
     #loader {
-      height: 100svh;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
     }
+    
   
     #bg-image {
-      background-position: center;
-      /* min-height: 40%; */
-      background-size: cover;
-      background-position: center;
+      width: 100%;
+      height: 100%;
+    
+      background-size: cover;          /* 🔥 THIS FIXES ALL GAPS */
+      background-position: center top;  /* move image UP safely */
+      background-repeat: no-repeat;
     }
-  
+      
     #loader #topheading {
       top: 4%;
     }
@@ -768,10 +776,13 @@ html, body{
     }
   
     #loader h1 {
-      font-size: clamp(28px, 7vw, 40px);
-      gap: 0.25em;
+/* display: inline-block; */
+      /* font-size: clamp(28px, 7vw, 40px); */
+      /* line-height: 1.2;   🔥 NORMAL */
+      /* gap: 0.25em; */
+      font-size: 20px;
     }
-  
+    
     /* ================= NAV ================= */
   
     #home #nav {
@@ -858,7 +869,7 @@ html, body{
     }
   
     #imgrig .imgcntnr {
-      width: 34vw;
+      width: 28vw;
       height: 60vw;
       border-radius: 12px;
     }
@@ -868,20 +879,20 @@ html, body{
     #work {
       height: auto;
       padding-bottom: 18vw;
-      /* background-color: #000; */
+      /* background-color: yellow; */
     }
   
     #work::before {
       top: -22vw;
       height: 22vw;
-      /* background-color: black; */
+      /* background-color: yellow; */
     }
   
     #work .workrow {
       padding: 0 6vw;
       height: auto;
       margin-bottom: 6vw;
-      /* background-color: #000; */
+      
     }
   
     .workrow h1 {
@@ -902,6 +913,7 @@ html, body{
     #images {
       padding: 0 6vw;
       gap: 6vw;
+      /* background-color: yellow; */
     }
   
     .cnt3 {
@@ -927,15 +939,33 @@ html, body{
   
     /* ================= CONTACT ================= */
   
+    
+
     #contact {
       padding: 16vw 0 18vw;
+      /* background-color: yellow; */
     }
-  
     #contact::before {
-      top: -8vw;
-      height: 8vw;
+      content: "";
+      position: absolute;
+      top: -4.21vw;               /* exactly matches margin */
+      left: 0;
+      width: 100%;
+      height: 4vw;
+      
+      background-image: url("image/curveimg.svg");
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      background-position: center;
+
+      transform: rotate(-180deg);
+      transform-origin: center;
+      /* background-color: yellow; */
+      z-index: 3;
+      pointer-events: none;
     }
-  
+    
+
     .contact-inner {
       width: 80%;
     }
@@ -965,3 +995,4 @@ html, body{
     }
   }
   
+
