@@ -805,6 +805,8 @@ html, body{
       padding: 0 6vw;
       padding-right: 8vw;
       margin-bottom: 5vh;
+      margin-top: 10vh;
+      /* background-color: red; */
     }
   
     .row h1 {
@@ -825,9 +827,10 @@ html, body{
     /* ================= VISUAL ROW ================= */
   
     .row-visual {
-      margin-top: -4vw;
+      margin-top: -3vw;
       margin-bottom: 10vw;
       gap: 4vw;
+      /* background-color: yellow; */
     }
   
     .row-visual img {
